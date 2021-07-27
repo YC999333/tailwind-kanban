@@ -48,6 +48,20 @@ function Wrapper() {
     setData(newState);
   };
 
+  const updateListTitle = (title, listId) => {
+    const list = data.lists[listId];
+    list.title = title;
+
+    const newState = {
+      ...data,
+      lists: {
+        ...data.lists,
+        [listId]: list,
+      },
+    };
+    setData(newState);
+  };
+
   const onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
 
@@ -57,6 +71,7 @@ function Wrapper() {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
+      return;
     }
     const sourceList = data.lists[source.droppableId];
     const destinationList = data.lists[destination.droppableId];
@@ -85,6 +100,7 @@ function Wrapper() {
       const newState = {
         ...data,
         lists: {
+          ...data.lists,
           [sourceList.id]: sourceList,
           [destinationList.id]: destinationList,
         },
@@ -94,7 +110,7 @@ function Wrapper() {
   };
 
   return (
-    <dataApi.Provider value={{ addMoreCard, addMoreList }}>
+    <dataApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="app" type="list" direction="horizontal">
           {(provided) => (
@@ -109,8 +125,8 @@ function Wrapper() {
               })}
               <div className="flex justify-center">
                 <InputContainer type="list" />
-                {provided.placeholder}
               </div>
+              {provided.placeholder}
             </div>
           )}
         </Droppable>

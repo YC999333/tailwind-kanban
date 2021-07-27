@@ -13,11 +13,11 @@ function List({ list, index }) {
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
-          <div
-            {...provided.dragHandleProps}
-            className="font-mono w-72 sm:w-80 mt-5"
-          >
-            <div className="bg-bluegray-200 mx-auto rounded-md">
+          <div className="font-mono w-72 sm:w-80 mt-5">
+            <div
+              {...provided.dragHandleProps}
+              className="bg-bluegray-200 mx-auto rounded-md"
+            >
               <Title title={list.title} />
               <Droppable droppableId={list.id}>
                 {(provided) => (
