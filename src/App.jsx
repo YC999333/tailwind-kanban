@@ -5,7 +5,7 @@ import Wrapper from "./components/Wrapper";
 function App() {
   const [bg, setBg] = useState("bg-indigo-300");
   return (
-    <div className={`${bg} bg-cover bg-center h-screen`}>
+    <div className={`${bg} bg-cover bg-center min-h-screen`}>
       <Navigation setBg={setBg} />
       <Wrapper />
     </div>
