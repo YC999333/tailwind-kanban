@@ -65,10 +65,10 @@ function Wrapper() {
     )[0];
 
     //same list
-    if (source.droppableId === destination.doppableId) {
+    if (source.droppableId === destination.droppableId) {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);
-      console.log([sourceList.id]);
+
       const newState = {
         ...data,
         lists: {
@@ -108,10 +108,9 @@ function Wrapper() {
                 return <List list={list} key={listId} index={index} />;
               })}
               <div className="flex justify-center">
-                <InputContainer type={"list"} />
+                <InputContainer type="list" />
+                {provided.placeholder}
               </div>
-
-              {provided.placeholder}
             </div>
           )}
         </Droppable>

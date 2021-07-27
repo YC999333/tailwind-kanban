@@ -53,15 +53,24 @@ function Navigation({ setBg }) {
           {showLandscape ? (
             <>
               <div
-                onClick={() => setBg("bg-landscape1")}
+                onClick={() => {
+                  setBg("bg-landscape1");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-landscape1 bg-cover h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-landscape2")}
+                onClick={() => {
+                  setBg("bg-landscape2");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-landscape2 bg-cover h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-landscape3")}
+                onClick={() => {
+                  setBg("bg-landscape3");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-landscape3 bg-cover h-20 rounded-lg"
               ></div>
             </>
@@ -70,37 +79,61 @@ function Navigation({ setBg }) {
           {showColor ? (
             <>
               <div
-                onClick={() => setBg("bg-indigo-300")}
+                onClick={() => {
+                  setBg("bg-indigo-300");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-indigo-300 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-blue-500")}
+                onClick={() => {
+                  setBg("bg-blue-500");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-blue-500 h-20 rounded-lg text-blue-500"
               >
                 blue
               </div>
               <div
-                onClick={() => setBg("bg-yellow-300")}
+                onClick={() => {
+                  setBg("bg-yellow-300");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-yellow-300 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-red-500")}
+                onClick={() => {
+                  setBg("bg-red-500");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-red-500 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-pink-500")}
+                onClick={() => {
+                  setBg("bg-pink-500");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-pink-500 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-green-500")}
+                onClick={() => {
+                  setBg("bg-green-500");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-green-500 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-gray-300")}
+                onClick={() => {
+                  setBg("bg-gray-300");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-gray-300 h-20 rounded-lg"
               ></div>
               <div
-                onClick={() => setBg("bg-orange-500")}
+                onClick={() => {
+                  setBg("bg-orange-500");
+                  setOpenSideMenu(false);
+                }}
                 className="bg-orange-500 h-20 rounded-lg"
               ></div>{" "}
             </>

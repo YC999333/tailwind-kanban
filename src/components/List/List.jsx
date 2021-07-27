@@ -8,10 +8,12 @@ function List({ list, index }) {
   return (
     <Draggable draggableId={list.id} index={index}>
       {(provided) => (
-        <div className="mx-auto">
+        <div
+          className="mx-auto"
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+        >
           <div
-            ref={provided.innerRef}
-            {...provided.draggableProps}
             {...provided.dragHandleProps}
             className="font-mono w-72 sm:w-80 mt-5"
           >
